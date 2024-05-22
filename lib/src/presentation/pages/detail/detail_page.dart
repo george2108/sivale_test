@@ -5,6 +5,7 @@ import '../../../config/enum/options_home_enum.dart';
 import '../../bloc/selection/selection_bloc.dart';
 import '../../widgets/camera_widget.dart';
 import '../../widgets/full_name_widget.dart';
+import '../../widgets/phone_number_widget.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({super.key});
@@ -23,6 +24,8 @@ class DetailPage extends StatelessWidget {
             const CameraWidget(),
           if (bloc.state.elementsSelected.contains(OptionsHomeEnum.fullName))
             const FullNameWidget(),
+          if (bloc.state.elementsSelected.contains(OptionsHomeEnum.phoneNumber))
+            const PhoneNumberWidget(),
         ],
       ),
     );

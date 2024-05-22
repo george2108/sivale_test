@@ -7,6 +7,7 @@ import '../../widgets/camera_widget.dart';
 import '../../widgets/full_name_widget.dart';
 import '../../widgets/list_employees_widget.dart';
 import '../../widgets/phone_number_widget.dart';
+import '../../widgets/sex_widget.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({super.key});
@@ -30,6 +31,8 @@ class DetailPage extends StatelessWidget {
             const FullNameWidget(),
           if (bloc.state.elementsSelected.contains(OptionsHomeEnum.phoneNumber))
             const PhoneNumberWidget(),
+          if (bloc.state.elementsSelected.contains(OptionsHomeEnum.sex))
+            const SexWidget(),
         ],
       ),
     );

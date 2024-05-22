@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../config/enum/options_home_enum.dart';
+import '../../../utils/constants/routes_constants.dart';
 import '../../../utils/models/option_home_item_model.dart';
 import '../../bloc/selection/selection_bloc.dart';
 import '../../widgets/home_item_widget.dart';
@@ -82,7 +83,11 @@ class HomePage extends StatelessWidget {
           if (bloc.state.elementsSelected.isEmpty)
             const Text('Seleccionar al menos una opción'),
           FilledButton.icon(
-            onPressed: bloc.state.elementsSelected.isEmpty ? null : () {},
+            onPressed: bloc.state.elementsSelected.isEmpty
+                ? null
+                : () {
+                    Navigator.of(context).pushNamed(optionsRoute);
+                  },
             label: const Text('Continuar'),
             icon: const Icon(Icons.check_circle_outline_outlined),
           ),

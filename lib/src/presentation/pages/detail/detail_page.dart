@@ -5,6 +5,7 @@ import '../../../config/enum/options_home_enum.dart';
 import '../../bloc/selection/selection_bloc.dart';
 import '../../widgets/camera_widget.dart';
 import '../../widgets/full_name_widget.dart';
+import '../../widgets/list_employees_widget.dart';
 import '../../widgets/phone_number_widget.dart';
 
 class DetailPage extends StatelessWidget {
@@ -22,6 +23,9 @@ class DetailPage extends StatelessWidget {
         children: [
           if (bloc.state.elementsSelected.contains(OptionsHomeEnum.camera))
             const CameraWidget(),
+          if (bloc.state.elementsSelected
+              .contains(OptionsHomeEnum.listEmployees))
+            const ListEmployeesWidget(),
           if (bloc.state.elementsSelected.contains(OptionsHomeEnum.fullName))
             const FullNameWidget(),
           if (bloc.state.elementsSelected.contains(OptionsHomeEnum.phoneNumber))

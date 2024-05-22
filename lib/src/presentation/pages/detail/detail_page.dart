@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/enum/options_home_enum.dart';
 import '../../bloc/selection/selection_bloc.dart';
 import '../../widgets/camera_widget.dart';
+import '../../widgets/full_name_widget.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({super.key});
@@ -19,7 +20,9 @@ class DetailPage extends StatelessWidget {
       body: ListView(
         children: [
           if (bloc.state.elementsSelected.contains(OptionsHomeEnum.camera))
-            const CameraWidget()
+            const CameraWidget(),
+          if (bloc.state.elementsSelected.contains(OptionsHomeEnum.fullName))
+            const FullNameWidget(),
         ],
       ),
     );
